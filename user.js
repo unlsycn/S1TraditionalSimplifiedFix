@@ -2,7 +2,7 @@
 // @name         禁用S1繁简转换
 // @license      GPL v3
 // @namespace    http://tampermonkey.net/
-// @version      0.13
+// @version      0.131
 // @description  禁用S1的繁简转换功能
 // @author       unlsycn
 // @require      https://cdn.jsdelivr.net/gh/mathiasbynens/he@36afe179392226cf1b6ccdb16ebbb7a5a844d93a/he.min.js
