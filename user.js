@@ -2,7 +2,7 @@
 // @name         禁用S1繁简转换
 // @license      GPL v3
 // @namespace    http://tampermonkey.net/
-// @version      0.131
+// @version      0.132
 // @description  禁用S1的繁简转换功能
 // @author       unlsycn
 // @require      https://cdn.jsdelivr.net/gh/mathiasbynens/he@36afe179392226cf1b6ccdb16ebbb7a5a844d93a/he.min.js
@@ -51,27 +51,24 @@
     if (document.getElementById("e_iframe")) {
         document.getElementById("postsubmit").addEventListener("click", () => {
             SubstituteSubject();
-            let editorBody = document
-                .getElementById("e_iframe")
-                .contentWindow.document.querySelector("body");
             switchEditor(0); // 切换到纯文本模式
             substituteText("e_textarea");
         });
     }
+
     // 回帖窗体
     const appendNode = document.getElementById("append_parent");
     const observationConfig = {
         childList: true,
         subtree: true,
     };
-    const callback = function (mutationsList, observer) {
+    const callback = function (mutationsList) {
         for (let mutation of mutationsList) {
             if (
                 mutation.type === "childList" &&
                 mutation.addedNodes.length > 0 &&
-                mutation.addedNodes[0].id === "fctrl_reply"
+                mutation.addedNodes[0].id === "fctrl_reply" // 监视回复窗体的添加
             ) {
-                // 监视回复窗体的添加
                 document
                     .getElementById("postsubmit")
                     .addEventListener("click", () => {
