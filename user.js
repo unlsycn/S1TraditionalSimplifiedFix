@@ -2,11 +2,11 @@
 // @name         禁用S1繁简转换
 // @license      GPL v3
 // @namespace    http://tampermonkey.net/
-// @version      0.132
+// @version      0.133
 // @description  禁用S1的繁简转换功能
 // @author       unlsycn
 // @require      https://cdn.jsdelivr.net/gh/mathiasbynens/he@36afe179392226cf1b6ccdb16ebbb7a5a844d93a/he.min.js
-// @match        https://bbs.saraba1st.com/2b/*
+// @match        https://*.saraba1st.com/2b/*
 // @icon         https://bbs.saraba1st.com/favicon.ico
 // ==/UserScript==
 
